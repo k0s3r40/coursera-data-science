@@ -1,0 +1,5 @@
+FlightNumber,Date,BoosterVersion,PayloadMass,Orbit,LaunchSite,Outcome,Flights,GridFins,Reused,Legs,LandingPad,Block,ReusedCount,Serial,Longitude,Latitude
+1,2006-03-24,Falcon 1,20.0,LEO,Kwajalein Atoll,None None,1,False,False,False,,,0,Merlin1A,167.7431292,9.0477206
+2,2007-03-21,Falcon 1,,LEO,Kwajalein Atoll,None None,1,False,False,False,,,0,Merlin2A,167.7431292,9.0477206
+3,2008-09-28,Falcon 1,165.0,LEO,Kwajalein Atoll,None None,1,False,False,False,,,0,Merlin2C,167.7431292,9.0477206
+4,2009-07-13,Falcon 1,200.0,LEO,Kwajalein Atoll,None None,1,False,False,False,,,0,Merlin3C,167.7431292,9.0477206
