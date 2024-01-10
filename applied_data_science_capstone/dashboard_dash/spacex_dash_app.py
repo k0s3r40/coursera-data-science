@@ -44,7 +44,10 @@ app.layout = html.Div(children=[html.H1('SpaceX Launch Records Dashboard',
 )
 def update_pie_chart(selected_site):
     if not selected_site:
-        fig = px.pie(spacex_df, names='class', title='Success Count for All Sites')
+        site_success_rate = spacex_df.groupby("Launch Site")["class"].mean().reset_index()
+        fig = px.pie(site_success_rate, names='Launch Site', values='class', title='Success Rate by Launch Site',
+                     labels={'Launch Site': 'Name', 'class': 'Success Rate'},
+                     hover_data=['class'])
     else:
         filtered_df = spacex_df[spacex_df['Launch Site'] == selected_site]
         fig = px.pie(filtered_df, names='class', title=f'Success Count for {selected_site}')
@@ -58,6 +61,8 @@ def update_pie_chart(selected_site):
      Input('payload-slider', 'value')]
 )
 def update_scatter_chart(selected_site, payload_range):
+    if not payload_range:
+        payload_range = [min_payload, max_payload]
     filtered_df = spacex_df[(spacex_df['Payload Mass (kg)'] >= payload_range[0]) &
                             (spacex_df['Payload Mass (kg)'] <= payload_range[1])]
 
